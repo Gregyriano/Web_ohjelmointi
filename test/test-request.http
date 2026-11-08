@@ -62,3 +62,16 @@ Content-Type: application/json
 
 ### delete cat by id
 DELETE {{apiUrl}}/cats/48
+
+## /users resource
+### Register new user
+POST {(apiUrl)}/users
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "username": "johndoe",
+    "email": "johndoe@example.com",
+    "salasana": "password123",
+    "password": "password123"
+}
