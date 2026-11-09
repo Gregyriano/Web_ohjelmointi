@@ -1,3 +1,4 @@
+
 CREATE TABLE `wsk_cats` (
   `cat_id` int(11) NOT NULL,
   `cat_name` text NOT NULL,

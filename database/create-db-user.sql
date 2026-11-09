@@ -1,4 +1,6 @@
-
+DROP DATABASE IF EXISTS wskcats;
+CREATE DATABASE wskcats;
+USE wskcats;
 -- tämä on vain mallia;
 -- ÄLÄ tötö tiedostoa tuuppaa gittiin, jos täällä on oikeita salasanoja;
 
