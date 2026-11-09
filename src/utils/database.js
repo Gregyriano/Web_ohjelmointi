@@ -1,4 +1,4 @@
-import mysql from 'mysql2';
+ import mysql from 'mysql2';
  // This will load variables from .env file to process.env
  // it can be done also e.g. in index.js but just make sure
  // that it is imported before using process.env variables

@@ -31,7 +31,7 @@ const getCatById = async (req, res) => {
   res.json(cat);
 };
 
-const getCatsByUserId = async(req, res) => {
+const getCatsByUserId = async (req, res) => {
   // TODO: implement, use findCatByUserId() model and add route to user router, and api test to tests
 };
 
@@ -40,7 +40,7 @@ const postCat = async (req, res) => {
   console.log(req.file);
   console.log(req.file.filename);
   req.body.filename = req.file.filename;
-
+  req.body.owner = res.locals.user.user_id;
   const result = await addCat(req.body);
   if (result) {
     res.status(201);
@@ -51,7 +51,11 @@ const postCat = async (req, res) => {
 };
 
 const deleteCat = async (req, res) => {
-  const result = await removeCat(Number(req.params.id));
+  const id = Number(req.params.id);
+  const user = res.locals.user;
+  console.log('user', user);
+
+  const result = await removeCat(id, user);
   if (result) {
     res.json({message: 'Cat removed!'});
   } else {
@@ -69,4 +73,4 @@ const putCat = async (req, res) => {
   }
 };
 
-export {getAllCats, getCatById, postCat, deleteCat, putCat};
+export {getAllCats, getCatById, postCat, deleteCat, putCat, getCatsByUserId};
